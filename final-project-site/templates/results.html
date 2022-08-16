@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>#GetRec'd - Recommendation Engine</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans&display=swap" rel="stylesheet">
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico')}}" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    </head>
+    <body background="{{url_for('static', filename='assets/home_background.jpg')}}">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="{{url_for('index')}}">#GetRec'd</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="{{url_for('index')}}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('search') }}">Get Recommendations</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#!">About</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <section>
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-6">
+                        <h1 class="mt-5">You Got Rec'd!!</h1>
+                    </div>
+                        
+                        <br>
+                        <div class="container mt-5">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Your games:</h3>
+                                    <ul class="list-group">
+                                    {% for game in games %}
+                                    <li class="list-group-item" style="background-color: rgba(255,255,255,0.5)">{{game}}</li>
+                                    {% endfor %}
+                                    </ul>
+                                    <div class="p-3">
+                                    <p>Not quite right? Make sure you use the full title. <br> Still not right? The game you picked wasn't popular enough to be included. Sorry!</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h3>Your recommendations:</h3>
+                                    {% if recs.title|length < 1 %}
+                                    <div class="p-3">
+                                    <p>Looks like you're a little too picky. Try broadening your search parameters next time.</p>
+                                    </div>
+                                    {% endif %}
+                                    <ul class="list-group">
+                                    {% for rec, url in zip(recs.title.values(), recs.url.values()) %}
+                                    <li class="list-group-item " style="background-color: rgba(255,255,255,0.5)"><a class="link-success" href='http://boardgamegeek.com{{url}}'>{{rec}}</a></li>
+                                    {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div style="text-align:center">
+            <a type="button" href="{{ url_for('search') }}" class="btn btn-dark btn-lg btn-block" style="width:240px; height:50px; text-align:center">Get Rec'd Again?</a>
+            </div>
+        </section>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>#GetRec'd - Recommendation Engine</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans&display=swap" rel="stylesheet">
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico')}}" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    </head>
+    <body background="{{url_for('static', filename='assets/home_background.jpg')}}">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="{{url_for('index')}}">#GetRec'd</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="{{url_for('index')}}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('search') }}">Get Recommendations</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#!">About</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <section>
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-6">
+                        <h1 class="mt-5">#GetRec'd</h1>
+                        <p>Are your board games becoming <em>bored</em> games? Not sure what the next addition to your shelf should be?
+                             You're in luck! Using <strong>state of the art</strong> technology employing <strong>the most advanced</strong>
+                            machine learning algorithms analyzing <strong><em>over 4000 attributes</em></strong>, the <strong>Data Science Geniuses</strong>
+                        behind <em><strong>#GetRec'd</strong></em> guarantee our recommendations point you in the right direction.</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div style="text-align:center">
+            <a type="button" href="{{ url_for('search') }}" class="btn btn-dark btn-lg btn-block" style="width:180px; height:50px; text-align:center">#GetRec'd</a>
+            </div>
+        </section>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+    </body>
+</html>
