@@ -44,7 +44,7 @@
                                     <h3>Your games:</h3>
                                     <ul class="list-group">
                                     {% for game in games %}
-                                    <li class="list-group-item" style="background-color: rgba(255,255,255,0.5)">{{game}}</li>
+                                    <li class="list-group-item" style="background-color: rgba(211,220,230,0.4); min-width: 300px;backdrop-filter: blur(6px);">{{game}}</li>
                                     {% endfor %}
                                     </ul>
                                     <div class="p-3">
@@ -60,7 +60,7 @@
                                     {% endif %}
                                     <ul class="list-group">
                                     {% for rec, url in zip(recs.title.values(), recs.url.values()) %}
-                                    <li class="list-group-item " style="background-color: rgba(255,255,255,0.5)"><a class="link-success" href='http://boardgamegeek.com{{url}}'>{{rec}}</a></li>
+                                    <li class="list-group-item " style="background-color: rgba(211,220,230,0.4); min-width: 300px;backdrop-filter: blur(6px);"><a class="link-success" href='http://boardgamegeek.com{{url}}'>{{rec}}</a></li>
                                     {% endfor %}
                                     </ul>
                                 </div>

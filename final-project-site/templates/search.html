@@ -54,34 +54,28 @@
             <div class="d-flex justify-content-center">
               <form method="POST" action="{{ url_for('search') }}">
                 <div class="row">
-                  <div class="col d-flex justify-content-center">
-                    <h3 class="">Whadya like?</h3>
-                  </div>
-                  <div class="col d-flex justify-content-center">
-                    <h3 class="">Whadya want?</h3>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <div class="form-group mb-2">
+                  <div class="col card" style="background-color: rgba(211,220,230,0.4); min-width: 300px;backdrop-filter: blur(6px);">
+                      <h3 class="">Whadya like?</h3>
+                    <div class="form-group mb-2 card-body">
                       {% for games in form.games %}
                         {{ games}}
                       {% endfor %}
                       </div>
                   </div>
-                <div class="col">
-                  <div class="form-group mb-2">
-                    {{ form.complexity.label}} {{ form.complexity}}
-                    </div>
-                    <p class="mb-2 d-flex justify-content-center">How many players?</p>
-                    <div class="form-group mb-2">
-                    {% for subfield in form.players %}
-                      {{ subfield }}
-                      {{ subfield.label }}
-                      {% endfor %}
-                    <div class="mt-2 d-flex justify-content-center">
-                      {{ form.submit }}
-                    </div>
+                <div class="col card" style="background-color: rgba(211,220,230,0.4); min-width: 300px; backdrop-filter: blur(6px);">
+                    <h3 class="">Whadya want?</h3>
+                  <div class="form-group mb-2 card-body">
+                    {{ form.complexity.label}}<br>{{ form.complexity}}
+                  </div>
+                  <p class="justify-content-center">How many players?</p>
+                  <div class="form-group mb-2 justify-content-center">
+                  {% for subfield in form.players %}
+                    {{ subfield }}
+                    {{ subfield.label }}
+                    {% endfor %}
+                  <div class="mt-2 d-flex justify-content-center">
+                    {{ form.submit }}
+                  </div>
                 </div>
                 
                 </div>
