@@ -3,9 +3,18 @@
 This was my final project submission for [Concordia Bootcamps'](https://concordiabootcamps.ca/) Data Science program.  
 If you want to skip ahead to the final product: view [the site](https://ds-bc-final.herokuapp.com/)!
 
+
 The project is a board game recommendation engine based on data scraped from [BoardGameGeek](https://boardgamegeek.com), which is kind of like a wiki for board games. They have a comprehensive collection of first-party data and community-based metrics around games in the database, which made it a great source for feature engineering. After a collecting data and cleaning it, a K-Nearest Neighbors model is used to identify similar games based on distance in the vector space.
 
 # Project Details
+
+<div align="center">
+<h3>User names 1-5 games</h3>
+<img src="Screen Shot 2022-08-27 at 20.58.17.png"/>
+<h3>System recommends up to 5 games based on selected parameters</h3>
+<img src="Screen Shot 2022-08-27 at 20.59.30.png"/>
+</div>
+
 ## Data Collection
 See also: [data collection Jupyter Notebook](/data-collection.ipynb)
 
